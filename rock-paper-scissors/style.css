@@ -1,0 +1,130 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=Lato|ZCOOL+KuaiLe');
+
+/* RESETS */
+
+html, body {
+	margin: 0;
+	font-size: 10px;
+}
+
+h1 {
+	margin: 0;
+}
+
+/* VARIABLES */
+:root {
+	--orange: hsl(30, 100%, 40%);
+	--blue: hsl(210, 100%, 30%);
+	--dark-blue: hsl(210, 100%, 20%);
+	--light: hsl(210, 100%, 95%);
+}
+
+/* FONTS */
+
+.t-heading {
+	font-family: 'ZCOOL Kuaile', cursive;
+	font-size: 3.6rem;
+}
+
+.t-button {
+	font-family: 'ZCOOL Kuaile', cursive;
+	font-size: 2.8rem;
+}
+
+.t-score {
+	font-family: Lato, sans-serif;
+	font-size: 3.6rem;
+}
+
+/* UTILITIES */
+
+.left {
+	transform: rotatey(180deg);
+}
+
+.hide {
+	display: none;
+}
+
+.button {
+	border: none;
+	border-radius: 40%;
+	padding: 1rem 2rem;
+	background-color: var(--orange);
+	color: var(--light);
+}
+.button:hover {
+	cursor: pointer;
+	background-color: var(--blue);
+}
+
+/* BASIC */
+body {
+	background-color: var(--light);
+}
+
+.header {
+	padding: 1rem 0;
+	background-color: var(--blue);
+	color: var(--light);
+	display: flex;
+	justify-content: center;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.display {
+	width: 30rem;
+	height: 30rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.result {
+	color: var(--orange);
+	position: absolute;
+	top: 24rem;
+	z-index: 1;
+}
+
+.player {
+	width: 14rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.player-left {
+  align-items: flex-start;
+}
+
+.player-right {
+  align-items: flex-end;
+}
+
+.hand {
+	fill: var(--dark-blue);
+}
+
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.button {
+	margin: 1rem;
+}
+
+.scores {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+/* ANIMATION */
