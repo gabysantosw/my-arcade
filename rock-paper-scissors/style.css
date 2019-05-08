@@ -15,6 +15,7 @@ h1 {
 /* VARIABLES */
 :root {
 	--orange: hsl(30, 100%, 40%);
+	--dark-orange: hsl(30, 100%, 30%);
 	--blue: hsl(210, 100%, 30%);
 	--dark-blue: hsl(210, 100%, 20%);
 	--light: hsl(210, 100%, 95%);
@@ -26,15 +27,30 @@ h1 {
 	font-family: 'ZCOOL Kuaile', cursive;
 	font-size: 3.6rem;
 }
+@media (max-width: 480px) {
+	.t-heading {
+		font-size: 2.4rem;
+	}
+}
 
 .t-button {
 	font-family: 'ZCOOL Kuaile', cursive;
 	font-size: 2.8rem;
 }
+@media (max-width: 480px) {
+	.t-button {
+		font-size: 2.8rem;
+	}
+}
 
 .t-score {
 	font-family: Lato, sans-serif;
 	font-size: 3.6rem;
+}
+@media (max-width: 480px) {
+	.t-score {
+		font-size: 2.2rem;
+	}
 }
 
 /* UTILITIES */
@@ -47,18 +63,6 @@ h1 {
 	display: none;
 }
 
-.button {
-	border: none;
-	border-radius: 40%;
-	padding: 1rem 2rem;
-	background-color: var(--orange);
-	color: var(--light);
-}
-.button:hover {
-	cursor: pointer;
-	background-color: var(--blue);
-}
-
 /* BASIC */
 body {
 	background-color: var(--light);
@@ -66,6 +70,7 @@ body {
 
 .header {
 	padding: 1rem 0;
+	border-bottom: .5rem solid var(--dark-blue);
 	background-color: var(--blue);
 	color: var(--light);
 	display: flex;
@@ -80,17 +85,27 @@ body {
 
 .display {
 	width: 30rem;
-	height: 30rem;
+	height: 40rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+@media (max-width: 480px) {
+	.display {
+		height: 25rem;
+	}
 }
 
 .result {
 	color: var(--orange);
 	position: absolute;
-	top: 24rem;
+	top: 33rem;
 	z-index: 1;
+}
+@media (max-width: 480px) {
+	.result {
+		top: 23rem;
+	}
 }
 
 .player {
@@ -117,14 +132,51 @@ body {
 	justify-content: center;
 }
 
+
 .button {
 	margin: 1rem;
+	padding: 1rem 2rem;
+	border: none;
+	border-bottom: .5rem solid var(--dark-orange);
+	border-radius: 3rem;
+	background-color: var(--orange);
+	color: var(--light);
+}
+.button:hover {
+	cursor: pointer;
+	background-color: var(--dark-orange);
+	position: relative;
+	top: .2rem;
+
 }
 
 .scores {
 	width: 100%;
+	color: var(--dark-blue);
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
+}
+
+.score {
+	margin: 2rem;
 }
 
 /* ANIMATION */
+
+.bounce {
+	animation-name: bounce;
+  transform-origin: center bottom;
+	animation-duration: .5s;
+	animation-iteration-count: 3;
+}
+
+@keyframes bounce {
+  from,
+  to {
+    transform: translatey(0);
+  }
+
+  40% {
+    transform: translatey(-30px);
+  }
+}

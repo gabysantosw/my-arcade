@@ -32,14 +32,14 @@ scissorsButton.addEventListener('click', selected);
 // EVENT HANDLERS
 
 function selected(e) {
-	const userPlay = e.currentTarget.id;
+	let userPlay = e.currentTarget.id;
 	playWith(userPlay);
 }
 
 // FUNCTIONS
 
 function playWith(playerOption) {
-  const randomOption = getRandomPlay();
+  let randomOption = getRandomPlay();
 
 	showPlay(playerOption, randomOption);
 
@@ -71,15 +71,27 @@ function getRandomPlay() {
 
 function showPlay(playerOption, randomOption) {
 	rockHandLeft.classList.remove('hide');
+	rockHandRight.classList.remove('hide');
+
 	paperHandLeft.classList.add('hide');
 	scissorsHandLeft.classList.add('hide');
-	rockHandRight.classList.remove('hide');
 	paperHandRight.classList.add('hide');
 	scissorsHandRight.classList.add('hide');
 
+	// rockHandLeft.classList.add('bounce');
+	// rockHandRight.classList.add('bounce');
+	//
+	// rockHandLeft.addEventListener('animationend', function() {
+	// 	rockHandLeft.classList.remove('bounce');
+	// });
+	//
+	// rockHandRight.addEventListener('animationend', function() {
+	// 	rockHandRight.classList.remove('bounce');
+	// });
+
 	switch (playerOption) {
 		case 'rock':
-      break;
+			break;
 		case 'paper':
 			rockHandLeft.classList.add('hide');
 			paperHandLeft.classList.remove('hide');
@@ -92,7 +104,7 @@ function showPlay(playerOption, randomOption) {
 
 	switch (randomOption) {
 		case 'rock':
-      break;
+			break;
 		case 'paper':
 			rockHandRight.classList.add('hide');
 			paperHandRight.classList.remove('hide');
@@ -102,6 +114,7 @@ function showPlay(playerOption, randomOption) {
 			scissorsHandRight.classList.remove('hide');
 			break;
 	}
+
 }
 
 function showScore() {
